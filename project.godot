@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="test-craftpix-2026"
-run/main_scene="uid://b2wj60f1rgdhb"
+run/main_scene="uid://d0fjvh1ibj3py"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -11,10 +11,10 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump_1") \
+	if (Input.is_action_just_pressed("jump_1") \
 	or Input.is_action_just_pressed("jump_2") \
-	or Input.is_action_just_pressed("jump_3") \
-	and is_on_floor():
+	or Input.is_action_just_pressed("jump_3")) \
+	and is_on_wall():
 		velocity.y = JUMP_VELOCITY
 
 	move_and_slide()

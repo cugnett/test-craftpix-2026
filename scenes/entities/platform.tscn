@@ -1,19 +1,57 @@
-[gd_scene format=3 uid="uid://c352w1jfjbdw4"]
+[gd_scene format=3 uid="uid://cdkoj7gh0sfmb"]
 
-[sub_resource type="Gradient" id="Gradient_5icv7"]
+[ext_resource type="Script" uid="uid://r2rv3cgejbf0" path="res://scripts/platform_animated.gd" id="1_0g23g"]
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_hb335"]
-gradient = SubResource("Gradient_5icv7")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hb335"]
+resource_local_to_scene = true
+size = Vector2(64, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5aub"]
-size = Vector2(256, 20)
+[sub_resource type="Animation" id="Animation_r6m2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
-[node name="Platform" type="RigidBody2D" unique_id=2053686293]
+[sub_resource type="Animation" id="Animation_0g23g"]
+resource_name = "move"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-4000, 0)]
+}
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1707470636]
-scale = Vector2(4, 20.5)
-texture = SubResource("GradientTexture1D_hb335")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r6m2y"]
+_data = {
+&"RESET": SubResource("Animation_r6m2y"),
+&"move": SubResource("Animation_0g23g")
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1476645470]
-scale = Vector2(4, 1)
-shape = SubResource("RectangleShape2D_l5aub")
+[node name="Platform" type="Node2D" unique_id=238369022]
+script = ExtResource("1_0g23g")
+
+[node name="PlatformAnimated" type="AnimatableBody2D" parent="." unique_id=1145311412]
+
+[node name="CollisionShapePlatform" type="CollisionShape2D" parent="PlatformAnimated" unique_id=786966951]
+shape = SubResource("RectangleShape2D_hb335")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlatformAnimated" unique_id=494438630]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformAnimated" unique_id=157154208]
+libraries/ = SubResource("AnimationLibrary_r6m2y")
