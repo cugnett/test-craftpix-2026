@@ -1,13 +1,59 @@
 [gd_scene format=3 uid="uid://b2wj60f1rgdhb"]
 
 [ext_resource type="PackedScene" uid="uid://6u6umwv5j75o" path="res://scenes/entities/player.tscn" id="1_014kd"]
+[ext_resource type="Texture2D" uid="uid://btyptqde0ny45" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/1.png" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://c352w1jfjbdw4" path="res://scenes/entities/platform.tscn" id="2_bswci"]
+[ext_resource type="Texture2D" uid="uid://df0dltipjofjc" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/3.png" id="3_pa8r4"]
+[ext_resource type="Texture2D" uid="uid://bv1xhl4j140cm" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/2.png" id="3_rus8k"]
+[ext_resource type="Texture2D" uid="uid://dmyhh0pwuggnq" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/4.png" id="4_15mv3"]
 
 [node name="Level1" type="Node2D" unique_id=1815202343]
 
+[node name="Background" type="Node2D" parent="." unique_id=744871802]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1689618552]
+auto_translate_mode = 1
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1796813972]
+position = Vector2(576, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("1_rus8k")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=1620300898]
+auto_translate_mode = 1
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=1259939148]
+position = Vector2(576, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("3_rus8k")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=1645993518]
+auto_translate_mode = 1
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=619838341]
+position = Vector2(576, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("3_pa8r4")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=1598111833]
+auto_translate_mode = 1
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=658607486]
+position = Vector2(576, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("4_15mv3")
+
 [node name="Player" parent="." unique_id=305110017 instance=ExtResource("1_014kd")]
-position = Vector2(346, 186)
+position = Vector2(506, 605)
 
 [node name="Platform" parent="." unique_id=2053686293 instance=ExtResource("2_bswci")]
-position = Vector2(344, 231)
+position = Vector2(572, 642)
 gravity_scale = 0.0

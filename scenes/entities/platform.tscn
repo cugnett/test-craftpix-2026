@@ -11,10 +11,9 @@ size = Vector2(256, 20)
 [node name="Platform" type="RigidBody2D" unique_id=2053686293]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1707470636]
-position = Vector2(0.5, 9.75)
-scale = Vector2(1.0039063, 20.5)
+scale = Vector2(4, 20.5)
 texture = SubResource("GradientTexture1D_hb335")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1476645470]
-position = Vector2(0, 10)
+scale = Vector2(4, 1)
 shape = SubResource("RectangleShape2D_l5aub")
