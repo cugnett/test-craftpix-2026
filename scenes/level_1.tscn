@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://d0fjvh1ibj3py"]
 
+[ext_resource type="Script" uid="uid://0ubdwetrteyg" path="res://scripts/level_1.gd" id="1_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://6u6umwv5j75o" path="res://scenes/entities/player.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://dbmrm4xql1w2" path="res://scenes/conductor.tscn" id="1_e3sih"]
 [ext_resource type="Texture2D" uid="uid://btyptqde0ny45" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/1.png" id="1_rus8k"]
 [ext_resource type="PackedScene" uid="uid://cdkoj7gh0sfmb" path="res://scenes/entities/platform.tscn" id="2_bswci"]
 [ext_resource type="Texture2D" uid="uid://df0dltipjofjc" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/3.png" id="3_pa8r4"]
 [ext_resource type="Texture2D" uid="uid://bv1xhl4j140cm" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/2.png" id="3_rus8k"]
 [ext_resource type="Texture2D" uid="uid://dmyhh0pwuggnq" path="res://assets/craftpix-green-zone-tileset-pixel-art/2 Background/Day/4.png" id="4_15mv3"]
 [ext_resource type="AudioStream" uid="uid://d2usxrxnc13ix" path="res://assets/music/YENA_catch_catch.mp3" id="6_15mv3"]
-[ext_resource type="Texture2D" uid="uid://yboeptsbub6i" path="res://assets/craftpix-green-zone-tileset-pixel-art/1 Tiles/Tile_01.png" id="8_e3sih"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hb335"]
+font_size = 64
 
 [node name="Level1" type="Node2D" unique_id=1815202343]
+script = ExtResource("1_2y5yt")
+
+[node name="Conductor" parent="." unique_id=1489083992 instance=ExtResource("1_e3sih")]
 
 [node name="Background" type="Node2D" parent="." unique_id=744871802]
 
@@ -54,98 +61,20 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_15mv3")
 
 [node name="Player" parent="." unique_id=305110017 instance=ExtResource("1_014kd")]
-position = Vector2(304, 320)
+position = Vector2(304, 256)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=490277816]
 stream = ExtResource("6_15mv3")
-autoplay = true
 
 [node name="Platform" parent="." unique_id=238369022 instance=ExtResource("2_bswci")]
-position = Vector2(360, 368)
-platformTexture = ExtResource("8_e3sih")
+position = Vector2(360, 300)
 scaleWidth = 5.0
 
-[node name="Platform2" parent="." unique_id=89186554 instance=ExtResource("2_bswci")]
-position = Vector2(536, 312)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 3.0
+[node name="BeatCount" type="Label" parent="." unique_id=781907512]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_hb335")
 
-[node name="Platform3" parent="." unique_id=43240885 instance=ExtResource("2_bswci")]
-position = Vector2(776, 360)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform4" parent="." unique_id=816107987 instance=ExtResource("2_bswci")]
-position = Vector2(904, 296)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform5" parent="." unique_id=264779472 instance=ExtResource("2_bswci")]
-position = Vector2(1024, 296)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform6" parent="." unique_id=810504215 instance=ExtResource("2_bswci")]
-position = Vector2(1128, 352)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform7" parent="." unique_id=488848450 instance=ExtResource("2_bswci")]
-position = Vector2(2376, 232)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform8" parent="." unique_id=1373599327 instance=ExtResource("2_bswci")]
-position = Vector2(2272, 296)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 3.0
-
-[node name="Platform9" parent="." unique_id=1438629066 instance=ExtResource("2_bswci")]
-position = Vector2(2096, 368)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform10" parent="." unique_id=712374900 instance=ExtResource("2_bswci")]
-position = Vector2(1424, 432)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform11" parent="." unique_id=1702393104 instance=ExtResource("2_bswci")]
-position = Vector2(1320, 352)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform12" parent="." unique_id=1778622777 instance=ExtResource("2_bswci")]
-position = Vector2(1560, 392)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 3.0
-
-[node name="Platform13" parent="." unique_id=2143045316 instance=ExtResource("2_bswci")]
-position = Vector2(1776, 416)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 3.0
-
-[node name="Platform14" parent="." unique_id=1403386941 instance=ExtResource("2_bswci")]
-position = Vector2(1944, 368)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 3.0
-
-[node name="Platform15" parent="." unique_id=2019584827 instance=ExtResource("2_bswci")]
-position = Vector2(2512, 184)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform18" parent="." unique_id=183618933 instance=ExtResource("2_bswci")]
-position = Vector2(3448, 184)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform17" parent="." unique_id=1842878175 instance=ExtResource("2_bswci")]
-position = Vector2(3344, 184)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 2.0
-
-[node name="Platform16" parent="." unique_id=20885407 instance=ExtResource("2_bswci")]
-position = Vector2(2952, 184)
-platformTexture = ExtResource("8_e3sih")
-scaleWidth = 20.0
+[connection signal="key_jump1_press" from="." to="." method="_on_key_jump_1_press"]
+[connection signal="key_jump3_press" from="." to="." method="_on_key_jump_3_press"]
+[connection signal="b_beat" from="Conductor" to="." method="_on_conductor_b_beat"]

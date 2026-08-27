@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cdkoj7gh0sfmb"]
 
 [ext_resource type="Script" uid="uid://r2rv3cgejbf0" path="res://scripts/platform_animated.gd" id="1_0g23g"]
+[ext_resource type="Texture2D" uid="uid://yboeptsbub6i" path="res://assets/craftpix-green-zone-tileset-pixel-art/1 Tiles/Tile_01.png" id="2_r6m2y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hb335"]
 resource_local_to_scene = true
@@ -45,6 +46,7 @@ _data = {
 
 [node name="Platform" type="Node2D" unique_id=238369022]
 script = ExtResource("1_0g23g")
+platformTexture = ExtResource("2_r6m2y")
 
 [node name="PlatformAnimated" type="AnimatableBody2D" parent="." unique_id=1145311412]
 

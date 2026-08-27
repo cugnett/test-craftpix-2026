@@ -33,7 +33,7 @@ func resizeColliderToSprite():
 		if(ColliderPlatform.shape is RectangleShape2D):
 			print(_spriteSize)
 			ColliderPlatform.shape.extents = _spriteSize /2
-			print("collider:" + str(ColliderPlatform.shape.extents))
+		#print("collider:" + str(ColliderPlatform.shape.extents))
 		else:
 			print("Unsupported collider shape!")
 	else:
